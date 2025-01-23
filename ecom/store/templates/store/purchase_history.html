@@ -1,0 +1,51 @@
+{% extends 'store/base.html' %}
+{% block body %}
+
+<!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Order History</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Looking to Order Again ?</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+        	<div class="row">
+        	
+        			<div class="col-8">
+                            <br>
+                            {%for order,item in items.items %}
+                            <div class="card mb-2" style="width: 30rem;">
+                                
+                                <div class="card-body">
+                                    
+                                  <h5 class="card-title">Order - {{order}} </h5>
+                                    {%for order_item in item %}
+                                  
+                                  <p class="card-text"> Product : <a href="{%url 'product' order_item.id%}">{{order_item.product}}</a> | Quantity : {{order_item.quantity}} | Price : {{order_item.price}} <br></p>
+                                    {%endfor%}
+                                </br>
+                                    <p class="card-text"> Total Price : {{order.amount_paid}} </p>
+                                    <p class="card-text"> Purchased On : {{order.date_order}} </p>
+                                  <h6 class="card-subtitle mb-2 text-body-secondary">Shipped {{order.shipped}}</h6>
+                                 
+
+                                </div>
+                            </div>
+                            
+                            {%endfor%}
+                           <br> 
+                                                
+                           <br>
+                           <br>
+                           <a href="{%url 'home'%}" class="card-link">Home</a>          
+        				    <br/><br/>
+                            <br/><br/>
+        			</div>
+        		
+        	</div>
+        </div>
+
+{% endblock %}

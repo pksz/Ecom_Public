@@ -1,0 +1,42 @@
+{% extends 'store/base.html' %}
+{% block body %}
+
+<!-- Header-->
+        <header class="bg-dark py-3">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Login</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Welcome To Webstore</p>
+                </div>
+            </div>
+        </header>
+        <br>
+        <br>
+        <center>
+        <form method="POST" action="{%url 'login'%}">
+            {%csrf_token%}
+            <div class="col-4">
+            <div class="mb-3">
+              <label for="johndoe" class="form-label">User Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="enter your username">
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder=" enter password">
+            </div>
+            <button type="submit" class="btn btn-secondary">Login</button>
+        </div>
+        <br>
+        <br>
+        <br/><br/>
+      </form>
+      <a href="{%url 'register' %}">Need an Account</a>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+          
+          
+        </center>
+{%endblock%}
