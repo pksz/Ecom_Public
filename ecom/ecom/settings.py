@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["storewebsiteprivate-production.up.railway.app","https://storewebsiteprivate-production.up.railway.app"]
-CSRF_TRUSTED_ORIGINS=["storewebsiteprivate-production.up.railway.app","https://storewebsiteprivate-production.up.railway.app"]
+ALLOWED_HOSTS = ["http://storewebsiteprivate-production.up.railway.app","https://storewebsiteprivate-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS=["http://storewebsiteprivate-production.up.railway.app","https://storewebsiteprivate-production.up.railway.app"]
 
 
 # Application definition
